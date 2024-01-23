@@ -6,7 +6,7 @@
 * @func: A pointer to the function to call for each node.
 *
 * Description: This function traverses a binary tree using in-order traversal.
-* It applies a given function to each visited node, passing the value in the node
+* It applies a given function to each visited node, passing the value in node
 * as a parameter to the function. If either tree or func is NULL, do nothing.
 */
 void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
@@ -20,7 +20,7 @@ void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
 	{
 		binary_tree_inorder(tree->left, func);
 	}
-	
+
 	func(tree->n);
 
 	if (tree->right != NULL)
