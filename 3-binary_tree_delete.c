@@ -8,9 +8,8 @@ void binary_tree_delete(binary_tree_t *tree)
 		return;
 	}
 
-	free(tree->left);
-	free(tree->right);
-	free(tree->parent);
+	binary_tree_delete(tree->left);
+	binary_tree_delete(tree->right);:zx
+
 	free(tree);
-	return;
 }
