@@ -8,25 +8,20 @@
 */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	size_t h;
+	size_t l_h = 0, r_h = 0;
 
 	if (tree == NULL)
 	{
 		return (0);
 	}
 
-	h = 0;
+	l_h = binary_tree_height(tree->left);
+	r_h = binary_tree_height(tree->right);
 
-	if (tree->left != NULL)
+	if (l_h > r_h)
 	{
-		h++;
-		binary_tree_height(tree->left);
+		return (l_h + 1);
 	}
-
-	if (tree->right != NULL)
-	{
-		h++;
-		binary_tree_height(tree->right);
-	}
-	return (h);
+	else
+		return (r_h + 1);	
 }
