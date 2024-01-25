@@ -20,7 +20,7 @@ size_t binary_tree_leaves(const binary_tree_t *tree)
 	{
 		return (1);
 	}
-	
+
 	L_leaves = binary_tree_leaves(tree->left);
 	R_leaves = binary_tree_leaves(tree->right);
 
